@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editing </title>
+    <style>
+        .text{
+            width:40%
+        }
+    </style>
+</head>
+<body>
+    <p>Text Size : </p>
+    <button id="Increase">Increase </button>
+    <button id="Decrease">Decrease </button>
+    <p>Type Color Name</p>
+    <input type="text" id="color">
+    <p>Font Style</p>
+   <button id="bld">Bold</button>
+   <button id="Italic">Italic</button>
+  
+<br>
+<br>
+<br>
+<br>
+
+   <div class="text">
+    
+<p id="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, placeat?</p>
+    </div>
+
+   <script>
+    var Increase = document.getElementById("Increase");
+    var Decrease = document.getElementById("Decrease");
+    var isBold =false;
+    var p = document.getElementById("p");
+    var count =0;
+    Increase.addEventListener("click",function(){
+        count++;
+        p.style.fontSize=count+"px";
+    
+    })
+
+    Decrease.addEventListener("click",function(){
+        count--;
+        p.style.fontSize=count+"px";
+    
+    });
+
+
+
+    color.addEventListener("change",function(){
+
+        var color = document.getElementById("color");
+        var colorValue = color.value;
+        
+        p.style.color =colorValue;
+   
+
+    })
+
+    
+    var bld = document.getElementById("bld");
+    bld.addEventListener("click",function(){
+    //   for(var i=700;i<18000;i+=100){
+    //     p.style.fontWeight=i;
+    //   }
+    if(isBold){
+        p.style.fontWeight ="normal";
+    }else{
+        p.style.fontWeight ="bold";
+
+    }
+    isBold = !isBold;
+    })
+
+    
+
+ 
+   var Italic =document.getElementById("Italic");
+   Italic.addEventListener("click",function(){
+
+    p.style.fontStyle="italic";
+
+   })
+
+  
+
+
+
+
+
+   </script>
+
+ 
+    
+</body>
+</html>
